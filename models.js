@@ -1,0 +1,5 @@
+
+
+
+var selectedCharacter = ''
+var selectedEnemy = ''
