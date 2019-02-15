@@ -1,5 +1,0 @@
-
-
-
-var selectedCharacter = ''
-var selectedEnemy = ''

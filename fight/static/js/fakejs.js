@@ -45,6 +45,8 @@ var squirrel = new Opponent({ charName: 'Sandy', attack: 12, id: 4});
 var opossum = new Opponent({charName: 'MoonShine', attack:17, id: 5});
 var rat = new Opponent({charName:'Splinter', attack: 10, id: 6});
 
+
+var enemy = [ ];
 //index.js $('.attack-button').on('click', function(e) { if(itsMyTurn){ $(document).trigger('attack:enemy'); } });
 
 //models.js // Declare a variable that will later store the selected character and enemy var selectedCharacter; var selectedEnemy;
@@ -53,15 +55,15 @@ var rat = new Opponent({charName:'Splinter', attack: 10, id: 6});
 
 // Give all characters an attack function
 
-
+//write js function using random math module to
 
 
 // is selected built in
-$(document).on('character:selected', function(event, character) { selectedCharacter = character; });
+$(document).on('character is selected', function(event, character) { selectedCharacter = character; });
 
-$(document).on('enemy:selected', function(event, enemy) { selectedEnemy = enemy; });
+$(document).on('enemy is selected', function(event, enemy) { selectedEnemy = enemy; });
 
-$(document).on('attack:enemy', function(event) { selectedCharacter.attack(selectedEnemy); });
+$(document).on('click', function(event) { selectedCharacter.attack(selectedEnemy); });
 
 
 function counter(y, c) {
