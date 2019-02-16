@@ -83,11 +83,9 @@
 
 //***********************
     function displayPickCharScreen(){
-      // var context = {
-      //   'name': 'Dan'
-      // };
 
-      $('.app').html(pickCharScreenTemplate(context));
+
+      $('.app').html(pickCharScreenTemplate());
 
       $('#char-button').on('click', function(e){
         e.preventDefault();
