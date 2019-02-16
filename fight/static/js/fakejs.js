@@ -72,9 +72,9 @@
       $('.app').html(welcomeScreenTemplate());
 
       // Register event handler for the next button
-      $('#next-button').on('click', function(e){
+      $('#forward-button').on('click', function(e){
         e.preventDefault();
-        displayNextScreen();
+        displayPickCharScreen();
       });
     }
 
@@ -85,9 +85,9 @@
     function displayPickCharScreen(){
 
 
-      $('.app').html(pickCharScreenTemplate());
+      $('.app').html(PickCharTemplate());
 
-      $('#char-button').on('click', function(e){
+      $('#forward-button').on('click', function(e){
         e.preventDefault();
         displayCharSelectedScreen();
       });
@@ -95,14 +95,25 @@
 
 //***********************************
     function displayCharSelectedScreen(){
-      $('.app').html(charSelectedTemplate());
+      $('.app').html(CharSelectedTemplate());
 
       // Register event handler for the next button
-      $('#next-button').on('click', function(e){
+      $('#forward-button').on('click', function(e){
         e.preventDefault();
-        battleScreen();
+        displayBattleScreen();
       })
-    }
+    };
+
+    function displayBattleScreen(){
+    	$('.app').html(BattleTemplate)
+
+		$('.document').on('load', function(e){
+    		e.preventDefault()
+
+		})
+
+
+	};
 
     function gameOver() {
 	if (health === 0) {
