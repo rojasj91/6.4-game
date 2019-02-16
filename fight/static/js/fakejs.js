@@ -1,3 +1,4 @@
+// import anime from 'lib/anime.es.js';
 
 (function($){
   $(function(){
@@ -15,7 +16,7 @@
 	var battleScreen = document.getElementById("battle-mode-screen").innerHTML;
 	var BattleTemplate = Handlebars.compile(battleScreen);
 
-	var selectedCharacter = '';
+	var selectedCharacter = '$(';
 	var selectedEnemy = '';
 
 
@@ -77,23 +78,23 @@
         displayPickCharScreen();
       });
 
-	  $(anime.timeline({loop: true}))
-		  .add({
-			targets: '.ml15 .word',
-			scale: [14,1],
-			opacity: [0,1],
-			easing: "easeOutCirc",
-			duration: 800,
-			delay: function(el, i) {
-			  return 800 * i;
-			}
-		  }).add({
-			targets: '.ml15',
-			opacity: 0,
-			duration: 1000,
-			easing: "easeOutExpo",
-			delay: 1000
-	  });
+	  // $(anime.timeline({loop: true}))
+		//   .add({
+		// 	targets: '.ml15 .word',
+		// 	scale: [14,1],
+		// 	opacity: [0,1],
+		// 	easing: "easeOutCirc",
+		// 	duration: 800,
+		// 	delay: function(el, i) {
+		// 	  return 800 * i;
+		// 	}
+		//   }).add({
+		// 	targets: '.ml15',
+		// 	opacity: 0,
+		// 	duration: 1000,
+		// 	easing: "easeOutExpo",
+		// 	delay: 1000
+	  // });
     }
 
     // $.ajax('game/', {success: displayWelcomeScreen});
