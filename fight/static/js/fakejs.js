@@ -1,52 +1,128 @@
-var selectedCharacter = 'user selected character'
-var selectedEnemy = 'randomly chosen enemy character'
 
-class Characters {
-    constructor(context) {
-        charName = context.charName;
-        health = 100;
-        id = context.id;
+(function($){
+  $(function(){
+
+
+    var welcomeScreen = document.getElementById("welcome-screen").innerHTML;
+    var welcomeScreenTemplate = Handlebars.compile(welcomeScreen);
+
+    var pickCharScreen = document.getElementById(("pick-char-screen")).innerHTML;
+    var PickCharTemplate = Handlebars.compile(pickCharScreen)
+
+    var charSelectedScreen = document.getElementById("char-selected-screen").innerHTML;
+    var CharSelectedTemplate = Handlebars.compile(charSelectedScreencreen);
+
+	var battleScreen = document.getElementById("battle-mode-screen").innerHTML;
+	var BattleTemplate = Handlebars.compile(battleScreen);
+
+	var selectedCharacter = '';
+	var selectedEnemy = '';
+
+
+
+	 class Characters {
+    	constructor(context) {
+        	charName = context.charName;
+        	health = 100;
+        	id = context.id;
 
         //do we need to define changed
-        attack(selectedEnemy){
-            selectedEnemy.health = selectedEnemy.health - this.attack;
-            $(document).trigger('health:changed');
-        }
+        	attack(selectedEnemy);{
+            	selectedEnemy.health = selectedEnemy.health - this.attack;
+            	$(document).trigger('health:changed');
+       	 		}
 
+    		}
+		}
+
+	 class Chiahuahua extends Characters {
+		constructor(context) {
+			super(context);
+
+		}
+
+	 }
+
+	 class Opponent extends Characters {
+		constructor(context) {
+			super(context);
+
+
+		}
+
+	 }
+
+
+	 var foxy = new Chiahuahua({ charName: 'Foxy', attack: 19, id: 1});
+	 var paco = new Chiahuahua({ charName: 'Paco', attack: 18, id: 2});
+	 var karen = new Chiahuahua({charName: 'Karen', attack:13, id: 3 });
+
+	 var squirrel = new Opponent({ charName: 'Sandy', attack: 12, id: 4});
+	 var opossum = new Opponent({charName: 'MoonShine', attack:17, id: 5});
+	 var rat = new Opponent({charName:'Splinter', attack: 10, id: 6});
+
+	 var available_heros = [];
+	 var available_villans = [];
+
+
+
+
+	 //**********************
+    function displayWelcomeScreen(){
+      $('.app').html(welcomeScreenTemplate());
+
+      // Register event handler for the next button
+      $('#next-button').on('click', function(e){
+        e.preventDefault();
+        displayNextScreen();
+      });
     }
-};
+
+    // $.ajax('game/', {success: displayWelcomeScreen});
 
 
-class Chiahuahua extends Characters {
-    constructor(context) {
-        super(context);
+//***********************
+    function displayPickCharScreen(){
+      // var context = {
+      //   'name': 'Dan'
+      // };
 
+      $('.app').html(pickCharScreenTemplate(context));
+
+      $('#char-button').on('click', function(e){
+        e.preventDefault();
+        displayCharSelectedScreen();
+      });
     }
 
+//***********************************
+    function displayCharSelectedScreen(){
+      $('.app').html(welcomeScreenTemplate());
+
+      // Register event handler for the next button
+      $('#next-button').on('click', function(e){
+        e.preventDefault();
+        battleScreen();
+      })
+    }
+
+    function gameOver() {
+	if (health === 0) {
+		res = 'gameOver!';
+		roundResults(res);
+		attackButton.disabled = true;
+		// counterButton.disabled = true;
+		playAgain.disabled = true;
+	}
 }
 
-class Opponent extends Characters {
-    constructor(context) {
-        super(context);
+    // Run the program for the first time!
+    displayWelcomeScreen();
+  });
+}(jQuery));
 
 
-    }
 
-}
-
-
-// id for each each character, will use random math onl;y for char 4-6 to choose enemy
-// what health is really doing in object
-var foxy = new Chiahuahua({ charName: 'Foxy', attack: 19, id: 1});
-var paco = new Chiahuahua({ charName: 'Paco', attack: 18, id: 2});
-var karen = new Chiahuahua({charName: 'Karen', attack:13, id: 3 });
-
-var squirrel = new Opponent({ charName: 'Sandy', attack: 12, id: 4});
-var opossum = new Opponent({charName: 'MoonShine', attack:17, id: 5});
-var rat = new Opponent({charName:'Splinter', attack: 10, id: 6});
-
-
-var enemy = [ ];
 //index.js $('.attack-button').on('click', function(e) { if(itsMyTurn){ $(document).trigger('attack:enemy'); } });
 
 //models.js // Declare a variable that will later store the selected character and enemy var selectedCharacter; var selectedEnemy;
@@ -86,15 +162,6 @@ function counter(y, c) {
 
 
 
-//html elements need to add, attack button, play again button,
- var result = ""
 
-function gameOver() {
-	if (health === 0) {
-		res = 'gameOver!';
-		roundResults(res);
-		attackButton.disabled = true;
-		// counterButton.disabled = true;
-		playAgain.disabled = true;
-	}
-}
+
+
