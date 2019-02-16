@@ -33,10 +33,10 @@
         	var id = context.id;
 
         // do we need to define changed
-        // 	var attack;{
+        // 	var attack(function{
         //     	selectedEnemy.health = selectedEnemy.health - this.attack;
         //     	$(document).trigger('health:changed');
-       	//  		}
+       	//  		});
 
     		}
 		}
@@ -138,8 +138,11 @@
     function displayBattleScreen(){
     	$('.app').html(BattleTemplate)
 
-		$('.document').on('load', function(e){
+		$('.attack').on('click', function(e){
     		e.preventDefault()
+			selectedEnemy.health = selectedEnemy.health - this.attack;
+            	$(document).trigger('health:changed');
+
 
 		})
 
