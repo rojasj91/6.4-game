@@ -16,8 +16,13 @@
 	var battleScreen = document.getElementById("battle-mode-screen").innerHTML;
 	var BattleTemplate = Handlebars.compile(battleScreen);
 
-	var selectedCharacter = '$(';
-	var selectedEnemy = '';
+
+	 // var availableHeros = ['foxy', 'paco', 'karen'];
+     // var availableVillains = ['squirrel', 'opossum', 'rat'];
+     //
+
+	// // var selectedCharacter = '';
+
 
 
 
@@ -62,9 +67,14 @@
 	 var opossum = new Opponent({charName: 'MoonShine', attack:17, id: 5});
 	 var rat = new Opponent({charName:'Splinter', attack: 10, id: 6});
 
-	 var available_heros = [];
-	 var available_villans = [];
-
+	  //*************making changes here
+     var availableHeros = ['foxy', 'paco', 'karen'];
+     var availableVillains = ['squirrel', 'opossum', 'rat'];
+        // ****** making changes here
+	var selectedCharacter = '';
+        //write method to bring in player's selection
+	var selectedEnemy = availableVillains[Math.floor(Math.random() * availableVillains.length)];
+        console.log(selectedEnemy);
 
 
 
@@ -117,8 +127,10 @@
       $('.app').html(CharSelectedTemplate());
 
       // Register event handler for the next button
+
       $('#forward-button').on('click', function(e){
         e.preventDefault();
+        // $(document).on('character is selected', function(event, character) { selectedCharacter = character; });
         displayBattleScreen();
       })
     };
