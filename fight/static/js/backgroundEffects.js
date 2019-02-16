@@ -69,7 +69,7 @@ demo.init = function() {
 			}, 2000);
 		}, 4000);
 	}
-}
+};
 
 // (re)size canvas (clears all particles)
 demo.resize = function() {
@@ -88,7 +88,7 @@ demo.resize = function() {
 	demo.height = window.innerHeight;
 	demo.canvas.width = demo.width * demo.dpr;
 	demo.canvas.height = demo.height * demo.dpr;
-}
+};
 
 demo.step = function(time, lag) {
 	// localize common references
@@ -158,7 +158,7 @@ demo.step = function(time, lag) {
 	}
 
 	demo.draw();
-}
+};
 
 demo.draw = function() {
 	// localize common references
@@ -195,7 +195,7 @@ demo.draw = function() {
 		var real_y = d.y * dpr - d.radius;
 		ctx.drawImage(d.canvas, real_x, real_y);
 	}
-}
+};
 
 
 // Rain definition
@@ -212,10 +212,10 @@ Rain.prototype.init = function() {
 	this.y = Math.random() * -100;
 	this.z = Math.random() * 0.5 + 0.5;
 	this.splashed = false;
-}
+};
 Rain.prototype.recycle = function() {
 	demo.rain_pool.push(this);
-}
+};
 // recycle rain particle and create a burst of droplets
 Rain.prototype.splash = function() {
 	if (!this.splashed) {
@@ -229,7 +229,7 @@ Rain.prototype.splash = function() {
 			drop.init(this.x);
 		}
 	}
-}
+};
 
 
 // Droplet definition
@@ -263,10 +263,10 @@ Drop.prototype.init = function(x) {
 	var speed = Math.random() * Drop.max_speed;
 	this.speed_x = Math.sin(angle) * speed;
 	this.speed_y = -Math.cos(angle) * speed;
-}
+};
 Drop.prototype.recycle = function() {
 	demo.drop_pool.push(this);
-}
+};
 
 
 
@@ -274,12 +274,12 @@ Drop.prototype.recycle = function() {
 // handle interaction
 demo.mouseHandler = function(evt) {
 	demo.updateCursor(evt.clientX, evt.clientY);
-}
+};
 demo.touchHandler = function(evt) {
 	evt.preventDefault();
 	var touch = evt.touches[0];
 	demo.updateCursor(touch.clientX, touch.clientY);
-}
+};
 demo.updateCursor = function(x, y) {
 	x /= demo.width;
 	y /= demo.height;
@@ -287,7 +287,7 @@ demo.updateCursor = function(x, y) {
 
 	demo.drop_delay = y_inverse*y_inverse*y_inverse * 100 + 2;
 	demo.wind = (x - 0.5) * 50;
-}
+};
 
 document.addEventListener('mousemove', demo.mouseHandler);
 document.addEventListener('touchstart', demo.touchHandler);

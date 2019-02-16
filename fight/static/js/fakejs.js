@@ -10,7 +10,7 @@
     var PickCharTemplate = Handlebars.compile(pickCharScreen)
 
     var charSelectedScreen = document.getElementById("char-selected-screen").innerHTML;
-    var CharSelectedTemplate = Handlebars.compile(charSelectedScreencreen);
+    var CharSelectedTemplate = Handlebars.compile(charSelectedScreen);
 
 	var battleScreen = document.getElementById("battle-mode-screen").innerHTML;
 	var BattleTemplate = Handlebars.compile(battleScreen);
@@ -20,17 +20,17 @@
 
 
 
-	 class Characters {
-    	constructor(context) {
-        	charName = context.charName;
-        	health = 100;
-        	id = context.id;
+	 class Characters{
+    	constructor(context){
+        	var charName = context.charName;
+        	var health = 100;
+        	var id = context.id;
 
-        //do we need to define changed
-        	attack(selectedEnemy);{
-            	selectedEnemy.health = selectedEnemy.health - this.attack;
-            	$(document).trigger('health:changed');
-       	 		}
+        // do we need to define changed
+        // 	var attack;{
+        //     	selectedEnemy.health = selectedEnemy.health - this.attack;
+        //     	$(document).trigger('health:changed');
+       	//  		}
 
     		}
 		}
@@ -95,7 +95,7 @@
 
 //***********************************
     function displayCharSelectedScreen(){
-      $('.app').html(welcomeScreenTemplate());
+      $('.app').html(charSelectedTemplate());
 
       // Register event handler for the next button
       $('#next-button').on('click', function(e){
@@ -132,31 +132,31 @@
 //write js function using random math module to
 
 
-// is selected built in
-$(document).on('character is selected', function(event, character) { selectedCharacter = character; });
-
-$(document).on('enemy is selected', function(event, enemy) { selectedEnemy = enemy; });
-
-$(document).on('click', function(event) { selectedCharacter.attack(selectedEnemy); });
-
-
-function counter(y, c) {
-	var move = Math.floor((Math.random()*5));
-	if (move >= 3 && y === 'attack') {
-		res = 'Computers counter was successful! You took 10 damage';
-		yourHealth -= 10;
-	} else if (move >= 3 && y === 'counter') {
-		res = 'Your counter was successful! Comp took 10 damage';
-		compHealth -= 10;
-	} else if (move < 3 && y === 'attack') {
-		res = 'Computer counter failed! You dealt 15 damage!';
-		compHealth -= 15;
-	} else if (move < 3 && y === 'counter') {
-		res = 'Your counter was not successful! You were delalt 15 damage!';
-		yourHealth -= 15;
-	}
-
-}
+// // is selected built in
+// $(document).on('character is selected', function(event, character) { selectedCharacter = character; });
+//
+// $(document).on('enemy is selected', function(event, enemy) { selectedEnemy = enemy; });
+//
+// $(document).on('click', function(event) { selectedCharacter.attack(selectedEnemy); });
+//
+//
+// function counter(y, c) {
+// 	var move = Math.floor((Math.random()*5));
+// 	if (move >= 3 && y === 'attack') {
+// 		res = 'Computers counter was successful! You took 10 damage';
+// 		yourHealth -= 10;
+// 	} else if (move >= 3 && y === 'counter') {
+// 		res = 'Your counter was successful! Comp took 10 damage';
+// 		compHealth -= 10;
+// 	} else if (move < 3 && y === 'attack') {
+// 		res = 'Computer counter failed! You dealt 15 damage!';
+// 		compHealth -= 15;
+// 	} else if (move < 3 && y === 'counter') {
+// 		res = 'Your counter was not successful! You were delalt 15 damage!';
+// 		yourHealth -= 15;
+// 	}
+//
+// }
 
 
 

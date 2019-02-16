@@ -10,13 +10,16 @@
     <title>Document</title>
 </head>
 <body>
-<h1>Testing Base View</h1>
+{#<h1>Testing Base View</h1>#}
 <div class="app">
 </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.0/handlebars.min.js"></script>
 
+
+
+{#******************************** WELCOME SCREEN ***********************************************************#}
 
 <script id="welcome-screen" type="text/x-handlebars-template">
     <div class="container">
@@ -25,6 +28,10 @@
         <a id="forward-button" class="btn btn-primary" href="#">Pick Your Chiahuahua !</a>
     </div>
 </script>
+
+
+{# *********************************** SELECT A CHARACTER SCREEN ********************************************************#}
+
 
 <script id="pick-char-screen" type="text/x-handlebars-template">
     <div class="container">
@@ -75,14 +82,22 @@
     </div>
 </script>
 
+
+
+{#*************************************CHARACTER SELECTED AND OPPONENT SELECTED*************************************************************#}
+
+
+
 <script id="char-selected-screen" type="text/x-handlebars-template">
     <div class="container">
 
 
         <a id="forward-button" class="btn btn-primary" href="#"> Enter Battle !</a>
     </div>
-</script>
+</script>e
 
+
+{#*************************************** BATTLE SCREEN ***************************************************************#}
 <script id="battle-mode-screen" type="text/x-handlebars-template">
     <div class="container">
         <h1>You're on the next screen {{name}}!!!</h1>
@@ -92,6 +107,8 @@
 </script>
 
 
-<script src="{% static "main.js" %}"></script>
+<script src="{% static "js/fakejs.js" %}"></script>
+<script src="{% static "js/backgroundEffects.js" %}"></script>
+
 </body>
 </html>
