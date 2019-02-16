@@ -23,7 +23,50 @@
 
 <script id="welcome-screen" type="text/x-handlebars-template">
     <div class="container">
-        <h1>Welcome To The Alley !</h1>
+{#        <h1>Welcome To The Alley !</h1>#}
+        <h1 class="ml15">
+                  <span class="word">Tough</span>
+                  <span class="word">Tacos</span>
+                </h1>
+                <section class="container">
+                    <div class="canvas">
+                      <div class="taco">
+                        <div class="shadow"></div>
+                        <div class="back"></div>
+                        <div class="lettuce one"></div>
+                        <div class="fry two"></div>
+                        <div class="meat one"></div>
+                        <div class="meat two"></div>
+                        <div class="meat three"></div>
+                        <div class="meat four"></div>
+                        <div class="meat five"></div>
+                        <div class="meat six"></div>
+                        <div class="tomato one">
+                          <div></div>
+                        </div>
+                        <div class="tomato two">
+                          <div></div>
+                        </div>
+                        <div class="fry one"></div>
+                        <div class="fry three"></div>
+                        <div class="lettuce two"></div>
+                        <div class="front">
+                          <div class="marks one"></div>
+                          <div class="marks two"></div>
+                          <div class="marks three"></div>
+                          <div class="marks four"></div>
+                        </div>
+                      </div>
+                      <div class="sombrero">
+                        <div class="back"></div>
+                        <div class="front"></div>
+                        <div class="hello">OH-LA!</div>
+                      </div>
+                    </div>
+                    <div>
+                    <button class="btn btn-dark">Choose Character</button>
+                    </div>
+                </section>
 
         <a id="forward-button" class="btn btn-primary" href="#">Pick Your Chiahuahua !</a>
     </div>
@@ -103,6 +146,14 @@
 <script id="battle-mode-screen" type="text/x-handlebars-template">
     <div class="container">
         <h1>Let The Battle Begin !!!!</h1>
+            <canvas id="canvas">C</canvas>
+                <div class="game">
+                    <button id="attack" onClick="fight(id)">Attack</button>
+                    <button id="counter" onClick="fight(id)">Special Attack</button>
+                    <div id="yourHealth"><div id="yourHealthBar">YOUR HEALTH</div></div>
+                    <div id="compHealth"><div id="compHealthBar">ENEMY HEALTH</div></div>
+                </div>
+
 
 {#        <a id="back-button" class="btn btn-primary" href="#"></a>#}
     </div>
