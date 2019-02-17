@@ -10,7 +10,8 @@
      <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
     <title>Document</title>
 </head>
-<body>
+<body class="main">
+
 {#<h1>Testing Base View</h1>#}
 <div class="app">
 </div>
@@ -68,7 +69,7 @@
                       </div>
                     </div>
                     <div>
-                    <button class="btn btn-dark" id="forward-button">Choose Your Chiahuahua</button>
+                    <button class="btn btn-dark chooseChia" id="forward-button">Choose Your Chiahuahua</button>
                     </div>
                 </section>
 
@@ -93,21 +94,21 @@
                <div class="carousel-inner">
                  <div class="carousel-item active">
                    <img src="{% static "images/dog5.png"%}" class="d-block w-100 selectPic"  alt="chaihuaha">
-                   <div class="carousel-caption d-none d-md-block">
+                   <div class="carousel-caption d-none d-md-block transbox">
                      <h5>Paco</h5>
                      <p>GET A TASTE OF THIS HOT SAUCE !</p>
                    </div>
                  </div>
                  <div class="carousel-item">
                    <img src="{% static "images/dog6.png" %}" class="d-block w-100 selectPic" alt="...">
-                   <div class="carousel-caption d-none d-md-block">
+                   <div class="carousel-caption d-none d-md-block transbox">
                      <h5>Foxy</h5>
                      <p>The most Dangerous Vanilla Wafer Eater Around </p>
                    </div>
                  </div>
                  <div class="carousel-item">
                    <img src="{% static "images/dog7.png" %}" class="d-block w-100 selectPic" alt="...">
-                   <div class="carousel-caption d-none d-md-block">
+                   <div class="carousel-caption d-none d-md-block transbox">
                      <h5>Karen</h5>
                      <p>YOU WONT LIKE ME WHEN IM ANGRY !</p>
                    </div>
@@ -141,14 +142,16 @@
         <h1>Youre Opponent Is --- </h1>
 
 
-        <a id="forward-button" class="btn btn-primary" href="#"> Enter Battle !</a>
+        <a id="forward-button" class="btn btn-primary" > Enter Battle !</a>
     </div>
 </script>
 
 
 {#*************************************** BATTLE SCREEN ***************************************************************#}
+
 <script id="battle-mode-screen" type="text/x-handlebars-template">
-    <div class="container">
+<section class="battleDiv">
+    <div class="container ">
         <h1>Let The Battle Begin !!!!</h1>
             <canvas id="canvas"></canvas>
                 <div class="game">
@@ -161,6 +164,8 @@
 
 {#        <a id="back-button" class="btn btn-primary" href="#"></a>#}
     </div>
+    </div>
+</section>
 </script>
 
 

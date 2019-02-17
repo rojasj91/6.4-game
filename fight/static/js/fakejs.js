@@ -17,10 +17,6 @@
 	var BattleTemplate = Handlebars.compile(battleScreen);
 
 
-	 // var availableHeros = ['foxy', 'paco', 'karen'];
-     // var availableVillains = ['squirrel', 'opossum', 'rat'];
-     //
-
 	// // var selectedCharacter = '';
 
 
@@ -67,7 +63,7 @@
 	 var opossum = new Opponent({charName: 'MoonShine', attack:17, id: 5});
 	 var rat = new Opponent({charName:'Splinter', attack: 10, id: 6});
 
-	  //*************making changes here
+
      var availableHeros = ['foxy', 'paco', 'karen'];
      var availableVillains = ['squirrel', 'opossum', 'rat'];
         // ****** making changes here
@@ -133,7 +129,7 @@
         // $(document).on('character is selected', function(event, character) { selectedCharacter = character; });
         displayBattleScreen();
       })
-    };
+    }
 
     function displayBattleScreen(){
     	$('.app').html(BattleTemplate)
@@ -142,12 +138,13 @@
     		e.preventDefault()
 			selectedEnemy.health = selectedEnemy.health - this.attack;
             	$(document).trigger('health:changed');
+            	console.log(selectedEnemy.health)
 
 
 		})
 
 
-	};
+	}
 
     function gameOver() {
 	if (health === 0) {
@@ -174,7 +171,7 @@
 
 // Give all characters an attack function
 
-//write js function using random math module to
+
 
 
 // // is selected built in
