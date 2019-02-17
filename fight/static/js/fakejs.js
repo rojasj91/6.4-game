@@ -24,12 +24,13 @@
 
 	 class Characters{
     	constructor(context){
-        	var charName = context.charName;
-        	var health = 100;
-        	var id = context.id;
+        	 this.charName = context.charName;
+        	 this.health = 100;
+        	 this.id = context.id;
+        	 this.imgFile = context.imgFile
 
         // do we need to define changed
-        // 	var attack(function{
+        // 	var attack function{
         //     	selectedEnemy.health = selectedEnemy.health - this.attack;
         //     	$(document).trigger('health:changed');
        	//  		});
@@ -55,13 +56,19 @@
 	 }
 
 
-	 var foxy = new Chiahuahua({ charName: 'Foxy', attack: 19, id: 1});
-	 var paco = new Chiahuahua({ charName: 'Paco', attack: 18, id: 2});
-	 var karen = new Chiahuahua({charName: 'Karen', attack:13, id: 3 });
+	 var foxy = new Chiahuahua({ charName: 'Foxy', attack: 19, id: 1, imgFile: 'dog6.png' });
+	 console.log(foxy)
+	 var paco = new Chiahuahua({ charName: 'Paco', attack: 18, id: 2, imgFile: 'dog5.png'});
+	 console.log(paco)
+	 var karen = new Chiahuahua({charName: 'Karen', attack:13, id: 3, imgFile: 'dog7.png'});
+	 console.log(karen)
 
-	 var squirrel = new Opponent({ charName: 'Sandy', attack: 12, id: 4});
+	 var squirrel = new Opponent({ charName: 'Sandy', attack: 12, id: 4, imgFile: 'sandystill.jpg'});
+	 console.log(squirrel)
 	 var opossum = new Opponent({charName: 'MoonShine', attack:17, id: 5});
+	 // console.log(oposum)
 	 var rat = new Opponent({charName:'Splinter', attack: 10, id: 6});
+	 console.log(rat)
 
 
      var availableHeros = ['foxy', 'paco', 'karen'];
@@ -70,7 +77,7 @@
 	var selectedCharacter = '';
         //write method to bring in player's selection
 	var selectedEnemy = availableVillains[Math.floor(Math.random() * availableVillains.length)];
-        console.log(selectedEnemy);
+        console.log("selected enemy", selectedEnemy);
 
 
 
@@ -135,8 +142,8 @@
     	$('.app').html(BattleTemplate)
 
 		$('.attack').on('click', function(e){
-    		e.preventDefault()
-			selectedEnemy.health = selectedEnemy.health - this.attack;
+    		e.preventDefault();
+			selectedEnemy.health = (selectedEnemy.health - this.attack);
             	$(document).trigger('health:changed');
             	console.log(selectedEnemy.health)
 

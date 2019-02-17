@@ -63,7 +63,7 @@
   max-width: 280px;
   max-height: 280px;
   position: absolute;
-  top: 0;
+  top: 80px;
   left: 0;
   right: 0;
   bottom: 0;
@@ -422,7 +422,7 @@
 h1,
 h6 {
   font-family: "Press Start 2P", cursive;
-  font-weight: 300;
+  font-weight: 200;
   top: 45%;
   right: 0;
   left: 0;
@@ -485,6 +485,21 @@ div.transbox {
   background-color: #ffffff;
   border: 1px solid black;
   opacity: 0.5;
+}
+
+h3 {
+  text-align: center;
+}
+
+.battleContainer {
+  margin-top: 30px;
+  height: 60%;
+  width: 100vw;
+}
+
+.tacoContainer {
+  margin-top: 10%;
+  margin-bottom: 5%;
 }
 
 /*# sourceMappingURL=styles.css.map */

@@ -346,5 +346,7 @@ var Ticker = (function(){
 		queueFrame();
 	}
 
+
+
 	return PUBLIC_API;
 }());
