@@ -97,7 +97,7 @@
 	  var characterId = $(this).data('id');
 
      var availableHeros = ['foxy', 'paco', 'karen'];
-     var availableVillains = ['squirrel', 'opossum', 'rat'];
+     var availableVillains = [{squirrel}, {opossum}, {rat}];
 
 	// var selectedCharacter= function selectCharacter(){
     //      document.getElementById('carousel-holder').value;
@@ -190,6 +190,7 @@
 
 	}
 
+	// need to add event listener to make this function check the value of health
     function gameOver() {
 	if (health === 0) {
 		res = 'gameOver!';
