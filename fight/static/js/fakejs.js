@@ -50,6 +50,11 @@
 
 		}
 
+		selectCharacter(){
+	  		var selectedCharacter = document.getElementById('carousel-holder').value;
+	  		var displayedCharacter = document.getElementById('selection').innerHTML;
+	  		return(displayedCharacter);
+	  }
 	 }
 
 	 class Opponent extends Characters {
@@ -63,23 +68,23 @@
 
 
 	 var foxy = new Chiahuahua({ charName: 'Foxy', attack: 19, id: 1, imgFile: 'dog6.png' });
-	 console.log(foxy)
+	 console.log(foxy);
 	 var paco = new Chiahuahua({ charName: 'Paco', attack: 18, id: 2, imgFile: 'dog5.png'});
-	 console.log(paco)
+	 console.log(paco);
 	 var karen = new Chiahuahua({charName: 'Karen', attack:13, id: 3, imgFile: 'dog7.png'});
-	 console.log(karen)
+	 console.log(karen);
 
 	 var squirrel = new Opponent({ charName: 'Sandy', attack: 12, id: 4, imgFile: 'sandystill.jpg'});
-	 console.log(squirrel)
+	 console.log(squirrel);
 	 var opossum = new Opponent({charName: 'MoonShine', attack:17, id: 5});
 	 // console.log(oposum)
 	 var rat = new Opponent({charName:'Splinter', attack: 10, id: 6});
-	 console.log(rat)
+	 console.log(rat);
 
 
      var availableHeros = ['foxy', 'paco', 'karen'];
      var availableVillains = ['squirrel', 'opossum', 'rat'];
-        // ****** making changes here
+
 	var selectedCharacter = '';
         //write method to bring in player's selection
 	var selectedEnemy = availableVillains[Math.floor(Math.random() * availableVillains.length)];
