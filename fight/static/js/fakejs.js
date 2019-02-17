@@ -16,6 +16,12 @@
 	var battleScreen = document.getElementById("battle-mode-screen").innerHTML;
 	var BattleTemplate = Handlebars.compile(battleScreen);
 
+	var health = document.getElementById("health")
+
+	setInterval(function(){
+	  health.value = Math.random() * 100;
+	}, 1000);
+
 
 	// // var selectedCharacter = '';
 
@@ -27,14 +33,14 @@
         	 this.charName = context.charName;
         	 this.health = 100;
         	 this.id = context.id;
-        	 this.imgFile = context.imgFile
+        	 this.imgFile = context.imgFile;
 
         // do we need to define changed
-        // 	var attack function{
+        // 	this.attack (function{
         //     	selectedEnemy.health = selectedEnemy.health - this.attack;
         //     	$(document).trigger('health:changed');
        	//  		});
-
+		//
     		}
 		}
 
@@ -139,7 +145,7 @@
     }
 
     function displayBattleScreen(){
-    	$('.app').html(BattleTemplate)
+    	$('.app').html(BattleTemplate);
 
 		$('.attack').on('click', function(e){
     		e.preventDefault();
