@@ -16,14 +16,20 @@
 	var battleScreen = document.getElementById("battle-mode-screen").innerHTML;
 	var BattleTemplate = Handlebars.compile(battleScreen);
 
-	var health = document.getElementById("health")
+	var characterCarousel=document.getElementById("pick-char-screen").innerHTML;
+    var carouselScreenTemplate = Handlebars.compile(characterCarousel);
 
-	setInterval(function(){
-	  health.value = Math.random() * 100;
-	}, 1000);
+	// var health = document.getElementById("health")
+	//
+	// setInterval(function(){
+	//   health.value = Math.random() * 100;
+	// }, 1000);
 
 
-	// // var selectedCharacter = '';
+	// selectCharacter=$("d-block").on("click", function(e){
+	// 		e.preventDefault()
+	// 		$(this).select();
+	// 		});
 
 
 
@@ -50,17 +56,24 @@
 
 		}
 
-		selectCharacter(){
-	  		var selectedCharacter = document.getElementById('carousel-holder').value;
-	  		var displayedCharacter = document.getElementById('selection').innerHTML;
-	  		return(displayedCharacter);
-	  }
+		select(){
+
+			$carouselScreenTemplate.on('click', Chiahuahua.select);
+
+			console.log("select method has been called")
+
+
+		}
+
+	  		// var selectedCharacter = document.getElementById('carousel-holder').value;
+	  		// var displayedCharacter = document.getElementById('selection').innerHTML;
+	  		// return(displayedCharacter);
+
 	 }
 
 	 class Opponent extends Characters {
 		constructor(context) {
 			super(context);
-
 
 		}
 
@@ -68,24 +81,37 @@
 
 
 	 var foxy = new Chiahuahua({ charName: 'Foxy', attack: 19, id: 1, imgFile: 'dog6.png' });
-	 console.log(foxy);
+	 // console.log(foxy);
 	 var paco = new Chiahuahua({ charName: 'Paco', attack: 18, id: 2, imgFile: 'dog5.png'});
-	 console.log(paco);
+	 // console.log(paco);
 	 var karen = new Chiahuahua({charName: 'Karen', attack:13, id: 3, imgFile: 'dog7.png'});
-	 console.log(karen);
+	 // console.log(karen);
 
 	 var squirrel = new Opponent({ charName: 'Sandy', attack: 12, id: 4, imgFile: 'sandystill.jpg'});
-	 console.log(squirrel);
+	 // console.log(squirrel);
 	 var opossum = new Opponent({charName: 'MoonShine', attack:17, id: 5});
 	 // console.log(oposum)
 	 var rat = new Opponent({charName:'Splinter', attack: 10, id: 6});
-	 console.log(rat);
+	 // console.log(rat);
 
+	  var characterId = $(this).data('id');
 
      var availableHeros = ['foxy', 'paco', 'karen'];
      var availableVillains = ['squirrel', 'opossum', 'rat'];
 
-	var selectedCharacter = '';
+	// var selectedCharacter= function selectCharacter(){
+    //      document.getElementById('carousel-holder').value;
+    //       document.getElementById('selection').innerHTML;
+    //      return(selectedCharacter);
+     //}
+
+	  // $(".carousel-item").on("click", function(e){
+		// 	// e.preventDefault()
+		// 	$(this).select();
+	  //
+		// 	});
+
+
         //write method to bring in player's selection
 	var selectedEnemy = availableVillains[Math.floor(Math.random() * availableVillains.length)];
         console.log("selected enemy", selectedEnemy);
