@@ -10,5 +10,3 @@ class Progress(models.Model):
     enemyHealth = models.IntegerField(default = 100)
     game_complete = models.BooleanField(default=False)
 
-class Progress(models.Model):
-    pass
