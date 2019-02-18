@@ -3,6 +3,7 @@
 class View{
 
     render(){
+
         //template_id is actually set in the child classes, the different screens
         var source = document.getElementById(this.template_id).innerHTML;
 
@@ -17,7 +18,7 @@ class View{
 
          // INJECT THE HANDLEBARS CONTENTS INTO THIS DIV TAG, use an object in ther template()
         // example template(selectedVillan)
-        this.$html = $('.app').html(template());
+        this.$html = $('.app').html(html);
 
         this.registerEvents();
 
@@ -39,6 +40,9 @@ class View{
     registerEvents(){
         //no operation method, does nothing but you can overload it with how to do something
     }
+
+
+
 }
 
 //**************END OF PARENT CLASS VIEW *********************************
@@ -52,21 +56,24 @@ class WelcomeScreen extends View{
         //REPLACE IN VAR SOURCE WHAT THIS.TEMPLATE_ID IS, WHICH IN THIS CASE WILL BE "welcome-screen"
         this.template_id = "welcome-screen";
 
+    }
+
+    registerEvents(){
         this.$html.find('#forward-button').on('click', function (e){
             e.preventDefault();
-            $(document).trigger("view:heroSelect");
-        })
+            $(document).trigger('view:characterSelect');
+        });
     }
 }
 
-
-class HeroSelectScreen extends View {
+/////////////////////////////
+class CharacterSelectScreen extends View {
     constructor() {
         //GO GET THE CONSTRUCTOR FUNCTION THATS BUILT IN ON VIEW
         super();
 
         //REPLACE IN VAR SOURCE WHAT THIS.TEMPLATE_ID IS, WHICH IN THIS CASE WILL BE "welcome-screen"
-        this.template_id = "hero-select-screen"
+        this.template_id = "pick-char-screen"
     }
 
 
@@ -79,82 +86,77 @@ class HeroSelectScreen extends View {
 
     }
 
+
     registerEvents() {
-        this.$html.find("#id-of-screen-in-html-template").on("change", function () {
-            var selectedHero = $(this).val();
-            GAME.selectChiahuahua(selectedCharacter)
-        })
-    }
-}
+        this.$html.find(".carousel-item_btn").on("click", function () {
+            var selectedCharacter = $(this).data('id');
+            GAME.selectChiahuahua(selectedCharacter);
+            console.log(GAME.selectedCharacter)
+        });
 
-class FightScreen extends View{
-    constructor(){
-        //GO GET THE CONSTRUCTOR FUNCTION THATS BUILT IN ON VIEW
-        super();
-
-        //REPLACE IN VAR SOURCE WHAT THIS.TEMPLATE_ID IS, WHICH IN THIS CASE WILL BE "welcome-screen"
-        this.template_id = "fight-screen"
-    }
-
-    getContextData() {
-        return {
-            hero: GAME.selectedCharacter,
-            villan: GAME.selectedOpponent,
-        }
-    }
-    registerEvents(){
-        this.$html.find('#attack').on("click", function(e){
+        this.$html.find('#rumble').on('click', function (e) {
             e.preventDefault();
-
-
-
-            var hero = GAME.selectedCharacter;
-            var opponent = GAME.selectedEnemy;
-
-
-            hero.attack(opponent);
-            setTimeout(function(){
-                opponent.attack(hero);
-
-            }, 2000);
+            $(document).trigger('view:pleaseWork');
+            // alert("views 100")
         });
 
 
+////////////////////////////////////////////////////////////////////
+        class FightScreen extends View {
+            constructor() {
+                //GO GET THE CONSTRUCTOR FUNCTION THATS BUILT IN ON VIEW
+                super();
+
+                //REPLACE IN VAR SOURCE WHAT THIS.TEMPLATE_ID IS, WHICH IN THIS CASE WILL BE "welcome-screen"
+                this.template_id = "battle-mode-screen"
+            }
+
+            getContextData() {
+                return {
+                    hero: GAME.selectedCharacter,
+                    villan: GAME.selectedOpponent,
+                }
+            }
+
+            registerEvents() {
+                this.$html.find('#attack').on("click", function (e) {
+                    e.preventDefault();
+
+
+                    var hero = GAME.selectedCharacter;
+                    var opponent = GAME.selectedEnemy;
+
+
+                    hero.attack(opponent);
+                    setTimeout(function () {
+                        opponent.attack(hero);
+
+                    }, 2000);
+                });
+
+
+            }
+
+            startRound() {
+
+            }
+
+            endRound() {
+
+            }
+
+            gameOver() {
+
+            }
+        }
     }
-
-    // startRound(){
-    //
-    // }
-    //
-    // endRound(){
-    //
-    // }
-    //
-    // gameOver(){
-    //
-    // }
 }
 
 
-function healthChange() {
-	yourHealthBar.style.width = yourHealth + "%";
-	compHealthBar.style.width =  compHealth + "%";
-}
+// function healthChange() {
+// 	yourHealthBar.style.width = yourHealth + "%";
+// 	compHealthBar.style.width =  compHealth + "%";
+// }
 
 
-/////COULD HAVE REDUCED THIS TO A SINGLE BLOCK OF CODE, NOTES ON IT IN VIEWS.JS
 
-  var welcomeScreen = document.getElementById("welcome-screen").innerHTML;
-    var welcomeScreenTemplate = Handlebars.compile(welcomeScreen);
-
-    var pickCharScreen = document.getElementById(("pick-char-screen")).innerHTML;
-    var PickCharTemplate = Handlebars.compile(pickCharScreen)
-
-    var charSelectedScreen = document.getElementById("char-selected-screen").innerHTML;
-    var CharSelectedTemplate = Handlebars.compile(charSelectedScreen);
-
-	var battleScreen = document.getElementById("battle-mode-screen").innerHTML;
-	var BattleTemplate = Handlebars.compile(battleScreen);
-
-	var characterCarousel=document.getElementById("pick-char-screen").innerHTML;
-    var carouselScreenTemplate = Handlebars.compile(characterCarousel);

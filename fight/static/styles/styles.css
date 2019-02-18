@@ -490,6 +490,10 @@ p {
   width: 100%;
 }
 
+.card {
+  position: static;
+}
+
 img {
   height: 50%;
 }

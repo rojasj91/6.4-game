@@ -94,21 +94,24 @@
                  <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
                </ol>
                <div class="carousel-inner">
-                 <div class="carousel-item active" data-id="{{ id }}">
+                 <div class="carousel-item active" >
+                     <a class="btn btn-primary carousel-item_btn" href="#" role="button" data-id = "1">Paco</a>
                    <img src="{% static "images/dog5.png"%}" class="d-block w-100 selectPic"  alt="chaihuaha">
                    <div class="carousel-caption d-none d-md-block transbox">
                      <h5>Paco</h5>
                      <p>GET A TASTE OF THIS HOT SAUCE !</p>
                    </div>
                  </div>
-                 <div class="carousel-item" data-id="{{ id }}">
+                 <div class="carousel-item" >
+                     <a class="btn btn-primary carousel-item_btn" href="#" role="button" data-id="0">Foxy</a>
                    <img src="{% static "images/dog6.png" %}" class="d-block w-100 selectPic" alt="...">
                    <div class="carousel-caption d-none d-md-block transbox">
                      <h5>Foxy</h5>
                      <p>The most Dangerous Vanilla Wafer Eater Around </p>
                    </div>
                  </div>
-                 <div class="carousel-item" data-id="{{ id }}">
+                 <div class="carousel-item">
+                     <a class="btn btn-primary carousel-item_btn" href="#" role="button" data-id="2">Karen</a>
                    <img src="{% static "images/dog7.png" %}" class="d-block w-100 selectPic" alt="...">
                    <div class="carousel-caption d-none d-md-block transbox">
                      <h5>Karen</h5>
@@ -128,7 +131,7 @@
             </div>
 {#THIS IS PROBABLY GOING TO NEED TO CHANGE FOR THIS BUTTON AND IN JS FILE FOR CHARACTER IF THE PICTURE IS THE "BUTTON"#}
 {#        WE ALSO NEED TO SAVE THE PLAYER ID AND PASS THAT INFO ALONG INTO SELECTED PLAYERS ARRAY#}
-        <a id="forward-button" class="btn btn-primary" href="#">Meet Your Opponent ! </a>
+        <a id="rumble" class="btn btn-primary" href="#">Meet Your Opponent ! </a>
     </div>
 </script>
 
@@ -138,19 +141,19 @@
 
 
 
-<script id="char-selected-screen" type="text/x-handlebars-template">
-    <div class="container">
-        <h1>Your Character Is </h1>
+{#<script id="char-selected-screen" type="text/x-handlebars-template">#}
+{#    <div class="container">#}
+{#        <h1>Your Character Is </h1>#}
 {#        THIS IS HARDCODED WITH AN IMAGE, IT NEEDS TO BE RESPONSIVE WITH SELECTEDCHARACTER#}
-        <img class="card-img-top" src="{% static "images/dog6.png" %}" alt="#" >
-        <h1>Your Opponent Is </h1>
+{#        <img class="card-img-top" src="{% static "images/dog6.png" %}" alt="#" >#}
+{#        <h1>Your Opponent Is </h1>#}
 {#        THIS IS HARDCODED WITH AN IMAGE, IT NEEDS TO BE RESPONSIVE WITH OUR RANDOMLY SELECTED OPPONENT #}
-        <img class="card-img-top" src="{% static "images/rat.jpg" %}" alt="#">
-
-
-        <a id="forward-button" class="btn btn-primary" > Enter Battle !</a>
-    </div>
-</script>
+{#        <img class="card-img-top" src="{% static "images/rat.jpg" %}" alt="#">#}
+{##}
+{##}
+{#        <a id="forward-button" class="btn btn-primary" > Enter Battle !</a>#}
+{#    </div>#}
+{#</script>#}
 
 
 {#*************************************** BATTLE SCREEN ***************************************************************#}
@@ -162,7 +165,7 @@
             <canvas id="canvas">c</canvas>
 
             <div class="fighting" id="fightingChiahuahua">
-                <img src=""images/>{{ selectedChiahuahua }}
+{#                <img src=""images/>{{ selectedChiahuahua }}#}
             </div>
 
             <div class="fighting" id="fightingOpponent">
@@ -194,9 +197,9 @@
 {#<script src="{% static "js/fakejs.js" %}"></script>#}
 
 <script src="{% static "js/models.js" %}"></script>
-<script src="{% static "js/NOTES.js" %}"></script>
 <script src="{% static "js/views.js" %}"></script>
 <script src="{% static "js/backgroundEffects.js" %}"></script>
+<script src="{% static "js/NOTES.js" %}"></script>
 
 </body>
 </html>
