@@ -157,8 +157,14 @@
 <section class="battleDiv">
     <div class="container battleContainer">
         <h1>Let The Battle Begin</h1>
-            <canvas id="canvas"></canvas>
+            <canvas id="canvas">c</canvas>
                 <footer class="game">
+<<<<<<< HEAD
+                    <button id="attack" onClick="fight(id)">Attack</button>
+		            <button id="counter" onClick="fight(id)">Special Attack</button>
+		            <div id="yourHealth"><div id="yourHealthBar"></div></div>
+		            <div id="compHealth"><div id="compHealthBar"></div></div>
+=======
                     <button id="attack">Attack</button>
 {#                    <button id="counter">Special Attack</button>#}
                     <progress id="health" class= 'yourHealth' value="100" max="100">Your Health</progress>
@@ -168,6 +174,7 @@
 
 {#                    <div id="yourHealth"><div id="yourHealthBar">YOUR HEALTH</div></div>#}
 {#                    <div id="compHealth"><div id="compHealthBar">ENEMY HEALTH</div></div>#}
+>>>>>>> 9cbfd653c6726fe37ab8c50aa14012a977aa9e74
                 </footer>
 
 
@@ -176,7 +183,6 @@
     </div>
 </section>
 </script>
-
 
 <script src="{% static "js/fakejs.js" %}"></script>
 <script src="{% static "js/backgroundEffects.js" %}"></script>

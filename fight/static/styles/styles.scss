@@ -37,11 +37,20 @@
 }
 //
 //******************************************************
+<<<<<<< HEAD
+
+.battleDiv{
+  background-color: black;
+    //height: 100%;
+}
+
+=======
 //
 //.battleDiv{
 //  background-color: black;
 //    //height: 100%;
 //}
+>>>>>>> 9cbfd653c6726fe37ab8c50aa14012a977aa9e74
 .ml15 {
   color: #f23b33;
   text-align: center;
@@ -71,6 +80,25 @@
   bottom: 0;
   margin: auto;
 }
+#yourHealth, #compHealth{
+  border: white 3px solid;
+  text-align: center;
+  width: 350px;
+  display: inline-block;
+}
+
+#yourHealthBar, #compHealthBar{
+  background: #536e2e;
+  padding-top: 25px;
+
+}
+#attack, #counter {
+	background: #eee;
+	padding: 10px 25px;
+	margin-bottom: 15px;
+	display: inline-block;
+}
+
 .taco {
   position: absolute;
   top: 24%;
