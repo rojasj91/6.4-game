@@ -6,7 +6,7 @@ from django.views.generic import TemplateView
 
 
 class IndexView(TemplateView):
-    template_name = 'fight/index.html'
+    template_name = 'fight/base.html'
 
 
 

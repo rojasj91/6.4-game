@@ -50,8 +50,9 @@
             });
         });
 
+/////COULD HAVE REDUCED THIS TO A SINGLE BLOCK OF CODE, NOTES ON IT IN VIEWS.JS
 
-    var welcomeScreen = document.getElementById("welcome-screen").innerHTML;
+  var welcomeScreen = document.getElementById("welcome-screen").innerHTML;
     var welcomeScreenTemplate = Handlebars.compile(welcomeScreen);
 
     var pickCharScreen = document.getElementById(("pick-char-screen")).innerHTML;
@@ -176,23 +177,7 @@
         displayPickCharScreen();
       });
 
-	  // $(anime.timeline({loop: true}))
-		//   .add({
-		// 	targets: '.ml15 .word',
-		// 	scale: [14,1],
-		// 	opacity: [0,1],
-		// 	easing: "easeOutCirc",
-		// 	duration: 800,
-		// 	delay: function(el, i) {
-		// 	  return 800 * i;
-		// 	}
-		//   }).add({
-		// 	targets: '.ml15',
-		// 	opacity: 0,
-		// 	duration: 1000,
-		// 	easing: "easeOutExpo",
-		// 	delay: 1000
-	  // });
+
     }
 
     // $.ajax('game/', {success: displayWelcomeScreen});

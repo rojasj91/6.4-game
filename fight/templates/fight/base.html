@@ -158,6 +158,14 @@
     <div class="container battleContainer">
         <h1>Let The Battle Begin</h1>
             <canvas id="canvas">c</canvas>
+
+            <div class="fighting" id="fightingChiahuahua">
+                <img src=""images/>{{ selectedChiahuahua }}
+            </div>
+
+            <div class="fighting" id="fightingOpponent">
+
+            </div>
                 <footer class="game">
                     <button id="attack" onClick="attack(id)">Attack</button>
 		            <button id="counter" onClick="attack(id)">Special Attack</button>
@@ -179,6 +187,7 @@
     </div>
 </section>
 </script>
+
 
 <script src="{% static "js/fakejs.js" %}"></script>
 <script src="{% static "js/backgroundEffects.js" %}"></script>
