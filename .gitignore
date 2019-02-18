@@ -1,0 +1,7 @@
+.idea/
+__pycahe__
+api/__pycache__/
+api/migrations/__pycache__/
+conf/__pycache__/
+fight/__pycache__/
+fight/migrations/__pycache__/

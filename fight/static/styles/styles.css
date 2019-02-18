@@ -33,10 +33,6 @@
   box-shadow: inset -2px -2px 3px rgba(255, 255, 255, 0.6), inset 2px 2px 3px rgba(0, 0, 0, 0.6);
 }
 
-.battleDiv {
-  background-color: black;
-}
-
 .ml15 {
   color: #f23b33;
   text-align: center;
@@ -54,7 +50,6 @@
 .body {
   margin: 0;
   padding: 0;
-  background-color: #fcf1a2;
 }
 
 .canvas {
@@ -480,15 +475,15 @@ p {
   margin-left: 45%;
 }
 
+.card {
+  display: none !important;
+}
+
 .btn-primary:hover + .card {
   display: inline-block !important;
   /*position: absolute;*/
   top: 0;
   width: 100%;
-}
-
-.card {
-  position: static;
 }
 
 img {

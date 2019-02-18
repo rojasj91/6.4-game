@@ -37,12 +37,20 @@
 }
 //
 //******************************************************
+<<<<<<< HEAD
 
 .battleDiv{
   background-color: black;
     //height: 100%;
 }
 
+=======
+//
+//.battleDiv{
+//  background-color: black;
+//    //height: 100%;
+//}
+>>>>>>> 9cbfd653c6726fe37ab8c50aa14012a977aa9e74
 .ml15 {
   color: #f23b33;
   text-align: center;
@@ -58,7 +66,7 @@
 .body{
   margin: 0;
   padding: 0;
-  background-color: #fcf1a2;
+  //background-color: #fcf1a2;
 }
 .canvas {
   width: 100vh;
@@ -503,9 +511,9 @@ p {
 
 }
 
-//.card {
-//    display: none !important;
-//}
+.card {
+    display: none !important;
+}
 
 .btn-primary:hover + .card{
     display: inline-block !important;
@@ -515,7 +523,7 @@ p {
 }
 
 .card{
-    position: static;
+    //position: static;
 }
 
 img {
@@ -548,3 +556,27 @@ h3{
     margin-top: 10%;
     margin-bottom: 5%;
 }
+
+//.yourHealthBar{
+//    background-color: black;
+//    border:2px solid black;
+//    position: relative;
+//    z-index: 200;
+//}
+//
+//
+//.compHealthBar{
+//    background-color: black;
+//    //position: relative;
+//    //z-index: 20;
+//}
+
+//.enemyHealth{
+//    background-color: #B22222;
+//    color: #B22222;
+//}
+//
+//.yourHealth{
+//    background-color: darkblue;
+//    color: darkblue;
+//}

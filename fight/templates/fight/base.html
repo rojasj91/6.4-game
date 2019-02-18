@@ -69,7 +69,7 @@
                       </div>
                     </div>
                     <div>
-                    <button class="btn btn-dark chooseChia" id="forward-button">Choose Your Chiahuahua</button>
+                    <button class="btn btn-dark chooseChia" id="forward-button">Choose Your Chihuahua</button>
                     </div>
                 </section>
 
@@ -92,21 +92,21 @@
                  <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
                </ol>
                <div class="carousel-inner">
-                 <div class="carousel-item active">
+                 <div class="carousel-item active" data-id="{{ id }}">
                    <img src="{% static "images/dog5.png"%}" class="d-block w-100 selectPic"  alt="chaihuaha">
                    <div class="carousel-caption d-none d-md-block transbox">
                      <h5>Paco</h5>
                      <p>GET A TASTE OF THIS HOT SAUCE !</p>
                    </div>
                  </div>
-                 <div class="carousel-item">
+                 <div class="carousel-item" data-id="{{ id }}">
                    <img src="{% static "images/dog6.png" %}" class="d-block w-100 selectPic" alt="...">
                    <div class="carousel-caption d-none d-md-block transbox">
                      <h5>Foxy</h5>
                      <p>The most Dangerous Vanilla Wafer Eater Around </p>
                    </div>
                  </div>
-                 <div class="carousel-item">
+                 <div class="carousel-item" data-id="{{ id }}">
                    <img src="{% static "images/dog7.png" %}" class="d-block w-100 selectPic" alt="...">
                    <div class="carousel-caption d-none d-md-block transbox">
                      <h5>Karen</h5>
@@ -139,9 +139,11 @@
 <script id="char-selected-screen" type="text/x-handlebars-template">
     <div class="container">
         <h1>Your Character Is </h1>
-        <img class="card-img-top" src="{{selectedChar.imgField}}" alt="#">
+{#        THIS IS HARDCODED WITH AN IMAGE, IT NEEDS TO BE RESPONSIVE WITH SELECTEDCHARACTER#}
+        <img class="card-img-top" src="{% static "images/dog6.png" %}" alt="#" >
         <h1>Your Opponent Is </h1>
-        <img class="card-img-top" src="{{selectedEnemy.imgField}}" alt="#">
+{#        THIS IS HARDCODED WITH AN IMAGE, IT NEEDS TO BE RESPONSIVE WITH OUR RANDOMLY SELECTED OPPONENT #}
+        <img class="card-img-top" src="{% static "images/sandystill.jpeg" %}" alt="#">
 
 
         <a id="forward-button" class="btn btn-primary" > Enter Battle !</a>
@@ -157,10 +159,22 @@
         <h1>Let The Battle Begin</h1>
             <canvas id="canvas">c</canvas>
                 <footer class="game">
+<<<<<<< HEAD
                     <button id="attack" onClick="fight(id)">Attack</button>
 		            <button id="counter" onClick="fight(id)">Special Attack</button>
 		            <div id="yourHealth"><div id="yourHealthBar"></div></div>
 		            <div id="compHealth"><div id="compHealthBar"></div></div>
+=======
+                    <button id="attack">Attack</button>
+{#                    <button id="counter">Special Attack</button>#}
+                    <progress id="health" class= 'yourHealth' value="100" max="100">Your Health</progress>
+                    <progress id="health" class='enemyHealth' value="100" max="100">Enemy Health</progress>
+
+
+
+{#                    <div id="yourHealth"><div id="yourHealthBar">YOUR HEALTH</div></div>#}
+{#                    <div id="compHealth"><div id="compHealthBar">ENEMY HEALTH</div></div>#}
+>>>>>>> 9cbfd653c6726fe37ab8c50aa14012a977aa9e74
                 </footer>
 
 

@@ -4,6 +4,6 @@ from api.views import ApiViewSet
 
 urlpatterns = [
 
-  path('gameContent/', ApiViewSet.as_view({'get': 'list', 'post': 'create'}))
+  path('game/', ApiViewSet.as_view({'get': 'list', 'post': 'create'}))
 
 ]
