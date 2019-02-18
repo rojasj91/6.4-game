@@ -1,14 +1,14 @@
 from django.shortcuts import render
 
 # Create your views here.
-from fight.models import Character
+from fight.models import Progress
 from rest_framework import viewsets
-from .serializers import CharacterSerializer
+from .serializers import ProgressSerializer
 
 class ApiViewSet(viewsets.ModelViewSet):
 
-    serializer_class = CharacterSerializer
-    queryset = Character.objects.all()
+    serializer_class = ProgressSerializer
+    queryset = Progress.objects.all()
 
 
     def perform_create(self, serializer):
