@@ -6,6 +6,7 @@ class View{
         //template_id is actually set in the child classes, the different screens
         var source = document.getElementById(this.template_id).innerHTML;
 
+
         //COMPILE IT TO A TEMPLATE
         var template = Handlebars.compile(source);
 
@@ -16,7 +17,7 @@ class View{
 
          // INJECT THE HANDLEBARS CONTENTS INTO THIS DIV TAG, use an object in ther template()
         // example template(selectedVillan)
-        this.$html = $('<div>').html(template());
+        this.$html = $('.app').html(template());
 
         this.registerEvents();
 
@@ -32,7 +33,7 @@ class View{
 
     //methods that are options for all the classes inheriting from this
     getContextData(){
-        return{ some object }
+        return{ }
     }
 
     registerEvents(){
@@ -49,9 +50,9 @@ class WelcomeScreen extends View{
         super();
 
         //REPLACE IN VAR SOURCE WHAT THIS.TEMPLATE_ID IS, WHICH IN THIS CASE WILL BE "welcome-screen"
-        this.template_id = "welcome-screen"
+        this.template_id = "welcome-screen";
 
-        this.$htmk.find(#forward-button).on('click', function (e){
+        this.$html.find('#forward-button').on('click', function (e){
             e.preventDefault();
             $(document).trigger("view:heroSelect");
         })
@@ -68,23 +69,23 @@ class HeroSelectScreen extends View {
         this.template_id = "hero-select-screen"
     }
 
-}
+
     //overloaded the empty context data we declared in the class
-    getContextData(){
+    getContextData() {
 
-    //can make an ajax request at this point to populate the context data
-    //this will be availableChiahuahuas
-        return { "chiahuahuas": GAME.Chiahuahuas};
+        //can make an ajax request at this point to populate the context data
+        //this will be availableChiahuahuas
+        return {"chiahuahuas": GAME.Chiahuahuas};
 
+    }
+
+    registerEvents() {
+        this.$html.find("#id-of-screen-in-html-template").on("change", function () {
+            var selectedHero = $(this).val();
+            GAME.selectChiahuahua(selectedCharacter)
+        })
+    }
 }
-
-    registerEvents(){
-     this.$htmll.find("#id-of-screen-in-html-template").on("chaqnge", function(){
-         var selectedHero = $(this).val();
-         GAME.selectHero
-     })
-}
-
 
 class FightScreen extends View{
     constructor(){
@@ -102,8 +103,8 @@ class FightScreen extends View{
         }
     }
     registerEvents(){
-        this.$html.find(#idforattackbuton).on("click", function(e){
-            e.preventDefault()
+        this.$html.find('#attack').on("click", function(e){
+            e.preventDefault();
 
 
 
@@ -115,19 +116,45 @@ class FightScreen extends View{
             setTimeout(function(){
                 opponent.attack(hero);
 
-            })
-        })
-    }
+            }, 2000);
+        });
 
-    startRound(){
 
     }
 
-    endRound(){
-
-    }
-
-    gameOver(){
-
-    }
+    // startRound(){
+    //
+    // }
+    //
+    // endRound(){
+    //
+    // }
+    //
+    // gameOver(){
+    //
+    // }
 }
+
+
+function healthChange() {
+	yourHealthBar.style.width = yourHealth + "%";
+	compHealthBar.style.width =  compHealth + "%";
+}
+
+
+/////COULD HAVE REDUCED THIS TO A SINGLE BLOCK OF CODE, NOTES ON IT IN VIEWS.JS
+
+  var welcomeScreen = document.getElementById("welcome-screen").innerHTML;
+    var welcomeScreenTemplate = Handlebars.compile(welcomeScreen);
+
+    var pickCharScreen = document.getElementById(("pick-char-screen")).innerHTML;
+    var PickCharTemplate = Handlebars.compile(pickCharScreen)
+
+    var charSelectedScreen = document.getElementById("char-selected-screen").innerHTML;
+    var CharSelectedTemplate = Handlebars.compile(charSelectedScreen);
+
+	var battleScreen = document.getElementById("battle-mode-screen").innerHTML;
+	var BattleTemplate = Handlebars.compile(battleScreen);
+
+	var characterCarousel=document.getElementById("pick-char-screen").innerHTML;
+    var carouselScreenTemplate = Handlebars.compile(characterCarousel);

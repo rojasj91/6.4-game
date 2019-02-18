@@ -1,9 +1,50 @@
-var GAME = new GAME();
-
+var GAME = new Game();
+var yourHealthBar = document.getElementById('yourHealthBar');
+var compHealthBar = document.getElementById('compHealthBar');
 
 //PROTECTS VARIABLES FROM BEING CHANGES IN BROWSER
 (function($){
         $(function(){
+
+
+
+              // You need to send a CSRF Token when POSTing
+        // You do this by adding this to your project
+        // https://docs.djangoproject.com/en/2.1/ref/csrf/#setting-the-token-on-the-ajax-request
+        var csrftoken = $("[name=csrfmiddlewaretoken]").val();
+
+        function csrfSafeMethod(method) {
+            // these HTTP methods do not require CSRF protection
+            return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
+        }
+
+        $.ajaxSetup({
+            beforeSend: function (xhr, settings) {
+                if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
+                    xhr.setRequestHeader("X-CSRFToken", csrftoken);
+                }
+            }
+        });
+
+        // POST ajax request to actually create the message
+            $.ajax('/api/game/', {
+                'method': 'POST',
+
+                //rewqrite this line, how can we get all our data in there
+                // 'data': {'text': messageUserSent},
+                //maybe Game
+
+                'success': function(data) {
+                    console.log('success!');
+
+                },
+
+                'error': function () {
+                    console.log("go back and fix it")
+                }
+            });
+
+
 
 
             //*****ROUTER*******

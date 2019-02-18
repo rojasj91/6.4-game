@@ -82,12 +82,12 @@
 
 
 
-	 class Characters{
-    	constructor(context){
-        	 this.charName = context.charName;
-        	 this.health = 100;
-        	 this.id = context.id;
-        	 this.imgFile = context.imgFile;
+	 // class Characters{
+    	// constructor(context){
+     //    	 this.charName = context.charName;
+     //    	 this.health = 100;
+     //    	 this.id = context.id;
+     //    	 this.imgFile = context.imgFile;
 
         // do we need to define changed
         // 	this.attack (function{
@@ -98,11 +98,11 @@
     		}
 		}
 
-	 class Chiahuahua extends Characters {
-		constructor(context) {
-			super(context);
-
-		}
+	 // class Chiahuahua extends Characters {
+		// constructor(context) {
+		// 	super(context);
+     //
+		// }
 
 		select(){
 		 	$(carouselScreenTemplate).on('click', {Chiahuahua:select});
@@ -119,33 +119,33 @@
 
 	 }
 
-	 class Opponent extends Characters {
-		constructor(context) {
-			super(context);
-
-		}
+	 // class Opponent extends Characters {
+		// constructor(context) {
+		// 	super(context);
+     //
+		// }
 
 	 }
 
 
-	 var foxy = new Chiahuahua({ charName: 'Foxy', attack: 19, id: 1, imgFile: 'dog6.png' });
-	 // console.log(foxy);
-	 var paco = new Chiahuahua({ charName: 'Paco', attack: 18, id: 2, imgFile: 'dog5.png'});
-	 // console.log(paco);
-	 var karen = new Chiahuahua({charName: 'Karen', attack:13, id: 3, imgFile: 'dog7.png'});
-	 // console.log(karen);
-
-	 var squirrel = new Opponent({ charName: 'Sandy', attack: 12, id: 4, imgFile: 'sandystill.jpg'});
-	 // console.log(squirrel);
-	 var opossum = new Opponent({charName: 'MoonShine', attack:17, id: 5, imgFile: 'opossum.jpeg'});
-	 // console.log(oposum)
-	 var rat = new Opponent({charName:'Splinter', attack: 10, id: 6, imgFile: 'rat.jpeg'});
-	 // console.log(rat);
+	 // var foxy = new Chiahuahua({ charName: 'Foxy', attack: 19, id: 1, imgFile: 'dog6.png' });
+	 // // console.log(foxy);
+	 // var paco = new Chiahuahua({ charName: 'Paco', attack: 18, id: 2, imgFile: 'dog5.png'});
+	 // // console.log(paco);
+	 // var karen = new Chiahuahua({charName: 'Karen', attack:13, id: 3, imgFile: 'dog7.png'});
+	 // // console.log(karen);
+     //
+	 // var squirrel = new Opponent({ charName: 'Sandy', attack: 12, id: 4, imgFile: 'sandystill.jpg'});
+	 // // console.log(squirrel);
+	 // var opossum = new Opponent({charName: 'MoonShine', attack:17, id: 5, imgFile: 'opossum.jpeg'});
+	 // // console.log(oposum)
+	 // var rat = new Opponent({charName:'Splinter', attack: 10, id: 6, imgFile: 'rat.jpeg'});
+	 // // console.log(rat);
 
 	  var characterId = $(this).data('id');
 
-     var availableHeros = [{foxy}, {paco}, {karen}];
-     var availableVillains = [{squirrel}, {opossum}, {rat}];
+     // var availableHeros = [{foxy}, {paco}, {karen}];
+     // var availableVillains = [{squirrel}, {opossum}, {rat}];
 
       selectedCharacter = {foxy};
 	// var selectedCharacter= function selectCharacter(){

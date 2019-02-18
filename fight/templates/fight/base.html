@@ -28,6 +28,7 @@
 
 <script id="welcome-screen" type="text/x-handlebars-template">
     <div class="container tacoContainer">
+        <div>
 {#        <h1>Welcome To The Alley !</h1>#}
         <h2 class="ml15">
                   <span class="word">Tough</span>
@@ -74,6 +75,7 @@
                 </section>
 
 {#        <a id="forward-button" class="btn btn-primary" href="#">Pick Your Chiahuahua !</a>#}
+        </div>
     </div>
 </script>
 
@@ -189,7 +191,11 @@
 </script>
 
 
-<script src="{% static "js/fakejs.js" %}"></script>
+{#<script src="{% static "js/fakejs.js" %}"></script>#}
+
+<script src="{% static "js/models.js" %}"></script>
+<script src="{% static "js/NOTES.js" %}"></script>
+<script src="{% static "js/views.js" %}"></script>
 <script src="{% static "js/backgroundEffects.js" %}"></script>
 
 </body>
