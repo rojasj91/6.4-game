@@ -3,6 +3,53 @@
 (function($){
   $(function(){
 
+  	console.log('Lets Get Ready To Rumble !');
+
+        // You need to send a CSRF Token when POSTing
+        // You do this by adding this to your project
+        // https://docs.djangoproject.com/en/2.1/ref/csrf/#setting-the-token-on-the-ajax-request
+        var csrftoken = $("[name=csrfmiddlewaretoken]").val();
+
+        function csrfSafeMethod(method) {
+            // these HTTP methods do not require CSRF protection
+            return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
+        }
+
+
+        // $('.display-4').css("background-color","yellow");
+         $.ajaxSetup({
+            beforeSend: function (xhr, settings) {
+                if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
+                    xhr.setRequestHeader("X-CSRFToken", csrftoken);
+                }
+            }
+        });
+
+         $('.carousel-item').on('submit', function (event) {
+            var CharacterUserSent = $({id}).val();
+            event.preventDefault();
+            console.log('selected player');
+            console.log("charcter user sent", CharacterUserSent);
+
+            // POST ajax request to actually create the message
+            $.ajax('/game/', {
+                'method': 'POST',
+                'data': {'text': CharacterUserSent},
+
+                'success': function (data) {
+                    $('carousel-item').val('');
+
+
+                    console.log('success!');
+                    CharacterUserSent(data);
+
+                },
+                'error': function () {
+                    console.log("go back and fix it")
+                }
+            });
+        });
+
 
     var welcomeScreen = document.getElementById("welcome-screen").innerHTML;
     var welcomeScreenTemplate = Handlebars.compile(welcomeScreen);
@@ -57,13 +104,13 @@
 		}
 
 		select(){
-
-			$carouselScreenTemplate.on('click', Chiahuahua.select);
+		 	$(carouselScreenTemplate).on('click', {Chiahuahua:select});
+		 	selectedCharacter = characterId;
 
 			console.log("select method has been called")
 
 
-		}
+		 }
 
 	  		// var selectedCharacter = document.getElementById('carousel-holder').value;
 	  		// var displayedCharacter = document.getElementById('selection').innerHTML;
@@ -96,9 +143,10 @@
 
 	  var characterId = $(this).data('id');
 
-     var availableHeros = ['foxy', 'paco', 'karen'];
+     var availableHeros = [{foxy}, {paco}, {karen}];
      var availableVillains = [{squirrel}, {opossum}, {rat}];
 
+      selectedCharacter = {foxy};
 	// var selectedCharacter= function selectCharacter(){
     //      document.getElementById('carousel-holder').value;
     //       document.getElementById('selection').innerHTML;
@@ -203,6 +251,7 @@
 
     // Run the program for the first time!
     displayWelcomeScreen();
+    // $.ajax('game/', {success: displayWelcomeScreen});
   });
 }(jQuery));
 
