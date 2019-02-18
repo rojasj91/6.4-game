@@ -143,7 +143,7 @@
         <img class="card-img-top" src="{% static "images/dog6.png" %}" alt="#" >
         <h1>Your Opponent Is </h1>
 {#        THIS IS HARDCODED WITH AN IMAGE, IT NEEDS TO BE RESPONSIVE WITH OUR RANDOMLY SELECTED OPPONENT #}
-        <img class="card-img-top" src="{% static "images/sandystill.jpeg" %}" alt="#">
+        <img class="card-img-top" src="{% static "images/rat.jpg" %}" alt="#">
 
 
         <a id="forward-button" class="btn btn-primary" > Enter Battle !</a>
@@ -159,8 +159,8 @@
         <h1>Let The Battle Begin</h1>
             <canvas id="canvas">c</canvas>
                 <footer class="game">
-                    <button id="attack" onClick="fight(id)">Attack</button>
-		            <button id="counter" onClick="fight(id)">Special Attack</button>
+                    <button id="attack" onClick="attack(id)">Attack</button>
+		            <button id="counter" onClick="attack(id)">Special Attack</button>
 		            <div id="yourHealth"><div id="yourHealthBar"></div></div>
 		            <div id="compHealth"><div id="compHealthBar"></div></div>
 

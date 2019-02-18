@@ -136,9 +136,9 @@
 
 	 var squirrel = new Opponent({ charName: 'Sandy', attack: 12, id: 4, imgFile: 'sandystill.jpg'});
 	 // console.log(squirrel);
-	 var opossum = new Opponent({charName: 'MoonShine', attack:17, id: 5});
+	 var opossum = new Opponent({charName: 'MoonShine', attack:17, id: 5, imgFile: 'opossum.jpeg'});
 	 // console.log(oposum)
-	 var rat = new Opponent({charName:'Splinter', attack: 10, id: 6});
+	 var rat = new Opponent({charName:'Splinter', attack: 10, id: 6, imgFile: 'rat.jpeg'});
 	 // console.log(rat);
 
 	  var characterId = $(this).data('id');
@@ -293,6 +293,7 @@
 // 	}
 //
 // }
+
 
 
 
