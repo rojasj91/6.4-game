@@ -16,11 +16,9 @@ class Game{
 
         this.selectedCharacter = null;
 
-        this.selectedOpponent = ('?');
-        // this.selectedOpponent = (this.Opponents[1]);
-
-
-
+        // this.selectedOpponent = ('?')
+        this.selectedOpponent = (this.Opponents[1]);
+        console.log("selectedOpponent", this.selectedOpponent)
     }
 
 
@@ -106,7 +104,9 @@ class Chiahuahua extends Character {
                     yourHealthBar.style.width = yourHealth + "%";}
                 )}
 
+
         attack(){
+            //it is not recognizing take damage, not sure if it needs to be GAME.takeDamage
         (this.selectedOpponent).takeDamage(this.strength);
     }
 
