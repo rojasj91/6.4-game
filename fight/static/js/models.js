@@ -94,46 +94,57 @@ class Character {
 }
 
 class Chiahuahua extends Character {
-    // constructor(context) {
-    //     super(context);
-        takeDamage(strength){
+    // constructor() {
+    super(takeDamage, attack) {
+        takeDamage(strength);
+        {
             super.takeDamage(strength);
-            $(document).trigger("Chiahuahua: health updated", function () {
+            //updates the span tag by ids- this line was changed per dans notes in lecture
+            $(document).trigger("Chiahuahua: health updated", [this.health]
+                //
+                // function () {
+                //
+                //     //does this really go here, do we need different syntax than "%"
+                //     yourHealthBar.style.width = yourHealth + "%";}
+            )
+        }
 
-                    //does this really go here, do we need different syntax than "%"
-                    yourHealthBar.style.width = yourHealth + "%";}
-                )}
 
-
-        attack(){
+        attack()
+        {
             //it is not recognizing take damage, not sure if it needs to be GAME.takeDamage
-        (this.selectedOpponent).takeDamage(this.strength);
-    }
+            (this.selectedOpponent).takeDamage(this.strength);
+        }
 
 
     }
 
-
+}
 
 
 
 
 
 class Opponent extends Character{
-    takeDamage(strength) {
-        super.takeDamage(strength);
-        $(document).on("opponent: health updated", function(){
+    super(takeDamage, attack) {
+        takeDamage(strength);
+        {
+            super.takeDamage(strength);
+            $(document).on("opponent: health updated", function () {
 
-        //does this really go here, do we need different syntax than "%"
+                    //does this really go here, do we need different syntax than "%"
 
-        compHealthBar.style.width =  compHealth + "%";}
-        )}
+                    // compHealthBar.style.width = compHealth + "%";
+                }
+            )
+        }
 
-         attack(){
-        (this.selectedCharacter).takeDamage(this.strength);
+        attack()
+        {
+            (this.selectedCharacter).takeDamage(this.strength);
+        }
+
     }
-
-
     }
 
 

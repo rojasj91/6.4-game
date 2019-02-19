@@ -88,6 +88,8 @@ class CharacterSelectScreen extends View {
 
 
     registerEvents() {
+        super.registerEvents()
+        var self = this
         this.$html.find(".carousel-item_btn").on("click", function () {
             var selectedCharacter = $(this).data('id');
             GAME.selectChiahuahua(selectedCharacter);
@@ -109,7 +111,7 @@ class FightScreen extends View {
         //GO GET THE CONSTRUCTOR FUNCTION THATS BUILT IN ON VIEW
         super();
 
-        //REPLACE IN VAR SOURCE WHAT THIS.TEMPLATE_ID IS, WHICH IN THIS CASE WILL BE "welcome-screen"
+        //REPLACE IN VAR SOURCE WHAT THIS.TEMPLATE_ID IS
         this.template_id = "battle-mode-screen"
     }
 
@@ -121,8 +123,11 @@ class FightScreen extends View {
     }
 
     registerEvents() {
+        super.registerEvents();
+        var self = this;
         this.$html.find('#attack').on("click", function (e) {
             e.preventDefault();
+            // self.startRound()
 
 
             (GAME.selectedCharacter).attack(GAME.selectedOpponent);
@@ -133,9 +138,12 @@ class FightScreen extends View {
         });
 
     //
-        }
+    //     startRound()
+    //
+    //     endRound()
+    // //
+       }
     }
-
 
 
 
