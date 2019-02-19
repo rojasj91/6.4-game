@@ -50,22 +50,22 @@
             });
         });
 
-/////COULD HAVE REDUCED THIS TO A SINGLE BLOCK OF CODE, NOTES ON IT IN VIEWS.JS
-
-  var welcomeScreen = document.getElementById("welcome-screen").innerHTML;
-    var welcomeScreenTemplate = Handlebars.compile(welcomeScreen);
-
-    var pickCharScreen = document.getElementById(("pick-char-screen")).innerHTML;
-    var PickCharTemplate = Handlebars.compile(pickCharScreen)
-
-    var charSelectedScreen = document.getElementById("char-selected-screen").innerHTML;
-    var CharSelectedTemplate = Handlebars.compile(charSelectedScreen);
-
-	var battleScreen = document.getElementById("battle-mode-screen").innerHTML;
-	var BattleTemplate = Handlebars.compile(battleScreen);
-
-	var characterCarousel=document.getElementById("pick-char-screen").innerHTML;
-    var carouselScreenTemplate = Handlebars.compile(characterCarousel);
+// /////COULD HAVE REDUCED THIS TO A SINGLE BLOCK OF CODE, NOTES ON IT IN VIEWS.JS
+//
+//   var welcomeScreen = document.getElementById("welcome-screen").innerHTML;
+//     var welcomeScreenTemplate = Handlebars.compile(welcomeScreen);
+//
+//     var pickCharScreen = document.getElementById(("pick-char-screen")).innerHTML;
+//     var PickCharTemplate = Handlebars.compile(pickCharScreen)
+//
+//     var charSelectedScreen = document.getElementById("char-selected-screen").innerHTML;
+//     var CharSelectedTemplate = Handlebars.compile(charSelectedScreen);
+//
+// 	var battleScreen = document.getElementById("battle-mode-screen").innerHTML;
+// 	var BattleTemplate = Handlebars.compile(battleScreen);
+//
+// 	var characterCarousel=document.getElementById("pick-char-screen").innerHTML;
+//     var carouselScreenTemplate = Handlebars.compile(characterCarousel);
 
 	// var health = document.getElementById("health")
 	//
@@ -104,14 +104,6 @@
      //
 		// }
 
-		select(){
-		 	$(carouselScreenTemplate).on('click', {Chiahuahua:select});
-		 	selectedCharacter = characterId;
-
-			console.log("select method has been called")
-
-
-		 }
 
 	  		// var selectedCharacter = document.getElementById('carousel-holder').value;
 	  		// var displayedCharacter = document.getElementById('selection').innerHTML;
@@ -147,7 +139,7 @@
      // var availableHeros = [{foxy}, {paco}, {karen}];
      // var availableVillains = [{squirrel}, {opossum}, {rat}];
 
-      selectedCharacter = {foxy};
+      // selectedCharacter = {foxy};
 	// var selectedCharacter= function selectCharacter(){
     //      document.getElementById('carousel-holder').value;
     //       document.getElementById('selection').innerHTML;
@@ -161,67 +153,67 @@
 		// 	});
 
 
-        //write method to bring in player's selection
-	var selectedEnemy = availableVillains[Math.floor(Math.random() * availableVillains.length)];
-        console.log("selected enemy", selectedEnemy);
-
-
-
-	 //**********************
-    function displayWelcomeScreen(){
-      $('.app').html(welcomeScreenTemplate());
-
-      // Register event handler for the next button
-      $('#forward-button').on('click', function(e){
-        e.preventDefault();
-        displayPickCharScreen();
-      });
-
-
-    }
-
-    // $.ajax('game/', {success: displayWelcomeScreen});
-
-
-//***********************
-    function displayPickCharScreen(){
-
-
-      $('.app').html(PickCharTemplate());
-
-      $('#forward-button').on('click', function(e){
-        e.preventDefault();
-        displayCharSelectedScreen();
-      });
-    }
-
-//***********************************
-    function displayCharSelectedScreen(){
-      $('.app').html(CharSelectedTemplate());
-
-      // Register event handler for the next button
-
-      $('#forward-button').on('click', function(e){
-        e.preventDefault();
-        // $(document).on('character is selected', function(event, character) { selectedCharacter = character; });
-        displayBattleScreen();
-      })
-    }
-
-    function displayBattleScreen(){
-    	$('.app').html(BattleTemplate);
-
-		$('.attack').on('click', function(e){
-    		e.preventDefault();
-			selectedEnemy.health = (selectedEnemy.health - this.attack);
-            	$(document).trigger('health:changed');
-            	console.log(selectedEnemy.health)
-
-
-		})
-
-
-	}
+//         //write method to bring in player's selection
+// 	var selectedEnemy = availableVillains[Math.floor(Math.random() * availableVillains.length)];
+//         console.log("selected enemy", selectedEnemy);
+//
+//
+//
+// 	 //**********************
+//     function displayWelcomeScreen(){
+//       $('.app').html(welcomeScreenTemplate());
+//
+//       // Register event handler for the next button
+//       $('#forward-button').on('click', function(e){
+//         e.preventDefault();
+//         displayPickCharScreen();
+//       });
+//
+//
+//     }
+//
+//     // $.ajax('game/', {success: displayWelcomeScreen});
+//
+//
+// //***********************
+//     function displayPickCharScreen(){
+//
+//
+//       $('.app').html(PickCharTemplate());
+//
+//       $('#forward-button').on('click', function(e){
+//         e.preventDefault();
+//         displayCharSelectedScreen();
+//       });
+//     }
+//
+// //***********************************
+//     function displayCharSelectedScreen(){
+//       $('.app').html(CharSelectedTemplate());
+//
+//       // Register event handler for the next button
+//
+//       $('#forward-button').on('click', function(e){
+//         e.preventDefault();
+//         // $(document).on('character is selected', function(event, character) { selectedCharacter = character; });
+//         displayBattleScreen();
+//       })
+//     }
+//
+//     function displayBattleScreen(){
+//     	$('.app').html(BattleTemplate);
+//
+// 		$('.attack').on('click', function(e){
+//     		e.preventDefault();
+// 			selectedEnemy.health = (selectedEnemy.health - this.attack);
+//             	$(document).trigger('health:changed');
+//             	console.log(selectedEnemy.health)
+//
+//
+// 		})
+//
+//
+// 	}
 
 	// need to add event listener to make this function check the value of health
     function gameOver() {
@@ -235,10 +227,10 @@
 }
 
     // Run the program for the first time!
-    displayWelcomeScreen();
-    // $.ajax('game/', {success: displayWelcomeScreen});
-  });
-}(jQuery));
+    // displayWelcomeScreen();
+//     // $.ajax('game/', {success: displayWelcomeScreen});
+//   });
+// }(jQuery));
 
 
 

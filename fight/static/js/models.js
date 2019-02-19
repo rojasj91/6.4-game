@@ -3,26 +3,26 @@ class Game{
     constructor(){
     //ASK ABOUT TH SET UP OF OBJECT
         this.Chiahuahuas = [
-            new Chiahuahua({ charName:'Foxy', strength: 18, imgFILE: 'dog6.png' }),
-            new Chiahuahua({ charName: 'Paco', strength: 18, imgFile: 'dog5.png'}),
-            new Chiahuahua({charName: 'Karen', strength:13, imgFile: 'dog7.png'}),
+            new Chiahuahua('Foxy', 18, 'dog6.png' ),
+            new Chiahuahua('Paco', 18, 'dog5.png'),
+            new Chiahuahua('Karen', 13, 'dog7.png'),
         ];
 
         this.Opponents = [
-            new Opponent({ charName: 'Sandy', strength: 12, imgFile: 'sandystill.jpg'}),
-            new Opponent({charName: 'MoonShine', strength:17, imgFile: 'opossum.jpeg'}),
-            new Opponent({charName:'Splinter', strength: 10,  imgFile: 'rat.jpeg'}),
+            new Opponent('Sandy', 12, 'sandystill.jpg'),
+            new Opponent('MoonShine', 17, 'opossum.jpeg'),
+            new Opponent('Splinter', 10,  'rat.jpeg'),
         ];
 
         this.SelectedCharacter = null;
-        this.SelectedEnemy = null;
-        this.selectedVillan = ('?')
+
+        this.selectedOpponent = ('?')
 
 
     }
 
 
-    //why does id translate to index value
+    //id is index value
     selectChiahuahua(id) {
         this.selectedCharacter = this.Chiahuahuas[id];
 
@@ -60,13 +60,14 @@ class Character {
     }
 
 
+   takeDamage(strength){
+       this.health -= strength;
+    }
+
     attack(selectedOpponent){
         selectedOpponent.takeDamage(this.strength);
     }
 
-    takeDamage(strength){
-        this.health -= strength;
-    }
 
 
 }
@@ -103,7 +104,7 @@ class Opponent extends Character{
 
     }
 
-//
+
 //     fetch(){
 //         var self = this;
 //         $ajax('/api/game/',
@@ -117,7 +118,7 @@ class Opponent extends Character{
 
 
 
-//where can we define random
+//see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
 function getRandomInt(max) {
   return Math.floor(Math.random() * Math.floor(max));
 }

@@ -97,60 +97,50 @@ class CharacterSelectScreen extends View {
         this.$html.find('#rumble').on('click', function (e) {
             e.preventDefault();
             $(document).trigger('view:pleaseWork');
-            // alert("views 100")
+            alert("views 100")
         });
+    }
+}
 
 
 ////////////////////////////////////////////////////////////////////
-        class FightScreen extends View {
-            constructor() {
-                //GO GET THE CONSTRUCTOR FUNCTION THATS BUILT IN ON VIEW
-                super();
+class FightScreen extends View {
+    constructor() {
+        //GO GET THE CONSTRUCTOR FUNCTION THATS BUILT IN ON VIEW
+        super();
 
-                //REPLACE IN VAR SOURCE WHAT THIS.TEMPLATE_ID IS, WHICH IN THIS CASE WILL BE "welcome-screen"
-                this.template_id = "battle-mode-screen"
-            }
+        //REPLACE IN VAR SOURCE WHAT THIS.TEMPLATE_ID IS, WHICH IN THIS CASE WILL BE "welcome-screen"
+        this.template_id = "battle-mode-screen"
+    }
 
-            getContextData() {
-                return {
-                    hero: GAME.selectedCharacter,
-                    villan: GAME.selectedOpponent,
-                }
-            }
-
-            registerEvents() {
-                this.$html.find('#attack').on("click", function (e) {
-                    e.preventDefault();
-
-
-                    var hero = GAME.selectedCharacter;
-                    var opponent = GAME.selectedEnemy;
-
-
-                    hero.attack(opponent);
-                    setTimeout(function () {
-                        opponent.attack(hero);
-
-                    }, 2000);
-                });
-
-
-            }
-
-            startRound() {
-
-            }
-
-            endRound() {
-
-            }
-
-            gameOver() {
-
-            }
+    getContextData() {
+        return {
+            hero: GAME.selectedCharacter,
+            villan: GAME.selectedOpponent,
         }
     }
-}
+
+    registerEvents() {
+        this.$html.find('#attack').on("click", function (e) {
+            e.preventDefault();
+
+
+            var hero = GAME.selectedCharacter;
+            var opponent = GAME.selectedEnemy;
+
+
+            hero.attack(opponent);
+            setTimeout(function () {
+                opponent.attack(hero);
+
+            }, 2000);
+        });
+
+
+        }
+    }
+
+
 
 
 // function healthChange() {

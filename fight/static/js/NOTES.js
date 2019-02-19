@@ -32,8 +32,8 @@ var compHealthBar = document.getElementById('compHealthBar');
             $.ajax('/api/game/', {
                 'method': 'POST',
 
-                //rewqrite this line, how can we get all our data in there
-                // 'data': {'text': messageUserSent},
+                //rewrite this line, how can we get all our data in there
+                'data': {'game': GAME},
                 //maybe Game
 
                 'success': function(data) {
@@ -62,7 +62,7 @@ var compHealthBar = document.getElementById('compHealthBar');
 
 
             //START THE GAME EVENT, ROUTER WILL RUN WHEN WE CALL THIS ON A BUTTON
-            $(document).trigger('view:pleaseWork', function(){
+            $(document).on('view:pleaseWork', function(){
                 var view = new FightScreen();
                 view.render();
             });
