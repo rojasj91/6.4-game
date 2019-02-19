@@ -162,13 +162,14 @@
 <section class="battleDiv">
     <div class="container battleContainer">
         <h1>Let The Battle Begin</h1>
-            <canvas id="canvas">c</canvas>
 
-            <div class="fighting" id="fightingChiahuahua">
-{#                <img src=""images/>{{ selectedChiahuahua }}#}
+
+            <div class="fighting" id="fightingChiahuahua" style="width: 200px; height: 200px; display:inline-block">
+                <img class= fightingPic" src ="images/{{ selectedChiahuahua.imgFile }}">
             </div>
 
-            <div class="fighting" id="fightingOpponent">
+            <div class="fighting" id="fightingOpponent" style="width: 200px; height: 200px; display:inline-block">
+                <img class= "fightingPic" src ="images/{{ selectedOpponent.imgFile }}">
 
             </div>
                 <footer class="game">
