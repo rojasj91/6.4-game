@@ -14,9 +14,11 @@ class Game{
             new Opponent('Splinter', 10,  'rat.jpeg'),
         ];
 
-        this.SelectedCharacter = null;
+        this.selectedCharacter = null;
 
-        this.selectedOpponent = ('?')
+        // this.selectedOpponent = ('?')
+        this.selectedOpponent = ('Moonshine');
+        console.log("selectedOpponent", this.selectedOpponent)
 
 
     }
@@ -31,12 +33,25 @@ class Game{
 
 
 
-//add more to this line
-//     id = (id ====  ? getRandom"?")
-    selectOpponent(id){
-        this.selectedOpponent = this.Opponents[getRandomInt(3)];
 
-    }
+
+//add more to this line
+    //how i would write it with python logic, cant figure out how to modify for js
+//     if (id ===='?' ) {
+//         id = selectedOpponent.getRandom;
+//     }else{
+//         id = id
+//
+//     }
+
+ /////// figure out how to use conditional ternary operator here for random id
+
+
+    // selectOpponent(id){
+    //
+    //     // this.selectedOpponent = this.Opponents[getRandomInt(3)];
+    //     this.selectedOpponent= (id ? (Opponents.getRandomInt(max3)) : (id));
+    // }
 
     save() {
     }
@@ -45,10 +60,10 @@ class Game{
 
 
 
-
-// GAME = new Game();
+//use these
+// GAME = new Game();  ***used in notes.js
 // GAME.save();
-// GAME.fetch();
+// GAME.fetch();  **will use in the chihuahua and opponent classes
 
 class Character {
     constructor(charName, strength, imgFile ) {
@@ -64,9 +79,9 @@ class Character {
        this.health -= strength;
     }
 
-    // attack(){
-    //     selectedOpponent.takeDamage(this.strength);
-    // }
+    attack(){
+        // (this.selectedOpponent).takeDamage(this.strength);
+    }
 
 
 
@@ -83,8 +98,13 @@ class Chiahuahua extends Character {
                     yourHealthBar.style.width = yourHealth + "%";}
                 )}
 
+        attack(){
+        (this.selectedOpponent).takeDamage(this.strength);
+    }
+
 
     }
+
 
 
 
@@ -94,12 +114,16 @@ class Chiahuahua extends Character {
 class Opponent extends Character{
     takeDamage(strength) {
         super.takeDamage(strength);
-        $(document).trigger("opponent: health updated", function(){
+        $(document).on("opponent: health updated", function(){
 
         //does this really go here, do we need different syntax than "%"
 
         compHealthBar.style.width =  compHealth + "%";}
         )}
+
+         attack(){
+        (this.selectedCharacter).takeDamage(this.strength);
+    }
 
 
     }
