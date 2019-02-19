@@ -25,6 +25,15 @@ class Game{
     //id is index value
     selectChiahuahua(id) {
         this.selectedCharacter = this.Chiahuahuas[id];
+
+
+
+    // selectOpponent(id);
+    //         // this.selectedOpponent = this.Opponents[getRandomInt(3)];
+    //         this.selectedOpponent= (id ? (this.Opponents.getRandomInt(max3)) : (id));
+
+        console.log("selectedOpponent", this.selectedOpponent)
+
     }
     //do an ajax right here under ajax
 
