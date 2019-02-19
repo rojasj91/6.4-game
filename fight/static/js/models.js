@@ -17,17 +17,14 @@ class Game{
         this.selectedCharacter = null;
 
         // this.selectedOpponent = ('?')
-        this.selectedOpponent = ('Moonshine');
+        this.selectedOpponent = (this.Opponents[1]);
         console.log("selectedOpponent", this.selectedOpponent)
-
-
     }
 
 
     //id is index value
     selectChiahuahua(id) {
         this.selectedCharacter = this.Chiahuahuas[id];
-
     }
     //do an ajax right here under ajax
 
@@ -98,7 +95,9 @@ class Chiahuahua extends Character {
                     yourHealthBar.style.width = yourHealth + "%";}
                 )}
 
+
         attack(){
+            //it is not recognizing take damage, not sure if it needs to be GAME.takeDamage
         (this.selectedOpponent).takeDamage(this.strength);
     }
 

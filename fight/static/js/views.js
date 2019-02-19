@@ -124,6 +124,7 @@ class FightScreen extends View {
         this.$html.find('#attack').on("click", function (e) {
             e.preventDefault();
 
+
             (GAME.selectedCharacter).attack(GAME.selectedOpponent);
             setTimeout(function () {
                 (GAME.selectedOpponent).attack(GAME.selectedCharacter);
