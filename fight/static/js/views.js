@@ -97,7 +97,7 @@ class CharacterSelectScreen extends View {
         this.$html.find('#rumble').on('click', function (e) {
             e.preventDefault();
             $(document).trigger('view:pleaseWork');
-            alert("views 100")
+            // alert("views 100")
         });
     }
 }
@@ -124,14 +124,9 @@ class FightScreen extends View {
         this.$html.find('#attack').on("click", function (e) {
             e.preventDefault();
 
-
-            var hero = GAME.selectedCharacter;
-            var opponent = GAME.selectedEnemy;
-
-
-            hero.attack(opponent);
+            GAME.selectedCharacter.attack(GAME.selectedOpponent);
             setTimeout(function () {
-                opponent.attack(hero);
+                GAME.selectedOpponent.attack(GAME.selectedCharacter);
 
             }, 2000);
         });

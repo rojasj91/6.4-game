@@ -64,9 +64,9 @@ class Character {
        this.health -= strength;
     }
 
-    attack(selectedOpponent){
-        selectedOpponent.takeDamage(this.strength);
-    }
+    // attack(){
+    //     selectedOpponent.takeDamage(this.strength);
+    // }
 
 
 
