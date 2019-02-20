@@ -88,8 +88,8 @@ class CharacterSelectScreen extends View {
 
 
     registerEvents() {
-        super.registerEvents()
-        var self = this
+        super.registerEvents();
+        var self = this;
         this.$html.find(".carousel-item_btn").on("click", function () {
             var selectedCharacter = $(this).data('id');
             GAME.selectChiahuahua(selectedCharacter);
@@ -130,11 +130,13 @@ class FightScreen extends View {
             // self.startRound()
 
 
+
             (GAME.selectedCharacter).attack(GAME.selectedOpponent);
             setTimeout(function () {
                 (GAME.selectedOpponent).attack(GAME.selectedCharacter);
 
             }, 2000);
+            console.log("attack button clicked")
         });
 
     //

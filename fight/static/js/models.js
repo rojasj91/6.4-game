@@ -80,6 +80,7 @@ class Character {
 
    takeDamage(strength){
        this.health -= strength;
+
     }
 
     attack(){
@@ -111,6 +112,7 @@ class Chiahuahua extends Character {
         {
             //it is not recognizing take damage, not sure if it needs to be GAME.takeDamage
             (this.selectedOpponent).takeDamage(this.strength);
+
         }
 
 
@@ -139,9 +141,13 @@ class Opponent extends Character{
         attack()
         {
             (this.selectedCharacter).takeDamage(this.strength);
+
+            (document).on("enemy:health", function(e, newValue){
+                "enemy:health".text(newValue)
+            })
         }
 
-    }
+        }
     }
 
 
