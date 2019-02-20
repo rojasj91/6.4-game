@@ -16,9 +16,9 @@ class Game{
 
         this.selectedCharacter = null;
 
-        // this.selectedOpponent = ('?')
-        this.selectedOpponent = (this.Opponents[1]);
-        console.log("selectedOpponent", this.selectedOpponent)
+        this.selectOpponent()
+
+        // console.log("selectedOpponent", this.selectedOpponent)
     }
 
 
@@ -26,41 +26,38 @@ class Game{
     selectChiahuahua(id) {
         this.selectedCharacter = this.Chiahuahuas[id];
 
+    }
 
+    selectOpponent() {
+        this.selectedOpponent = this.Opponents[getRandomInt(3)];
 
-    // selectOpponent(id);
-    //         // this.selectedOpponent = this.Opponents[getRandomInt(3)];
-    //         this.selectedOpponent= (id ? (this.Opponents.getRandomInt(max3)) : (id));
 
         console.log("selectedOpponent", this.selectedOpponent)
 
+
+        //do an ajax right here under ajax
+
+        // if (id === '?' ) {
+        //     id = getRandomInt(3)
+        // }
+
+
     }
-    //do an ajax right here under ajax
-
-
-
 
 
 //add more to this line
     //how i would write it with python logic, cant figure out how to modify for js
-//     if (id ===='?' ) {
+
 //         id = selectedOpponent.getRandom;
 //     }else{
-//         id = id
-//
-//     }
+//         id = id}
 
  /////// figure out how to use conditional ternary operator here for random id
 
 
-    // selectOpponent(id){
-    //
-    //     // this.selectedOpponent = this.Opponents[getRandomInt(3)];
-    //     this.selectedOpponent= (id ? (Opponents.getRandomInt(max3)) : (id));
-    // }
 
-    save() {
-    }
+    // save() {
+    // }
 }
 
 
@@ -110,7 +107,7 @@ class Chiahuahua extends Character {
         }
 
 
-        attack()
+        attack();
         {
             //it is not recognizing take damage, not sure if it needs to be GAME.takeDamage
             (this.selectedOpponent).takeDamage(this.strength);
@@ -155,7 +152,7 @@ class Opponent extends Character{
 //             'success': function(data){
 //             self.selectOpponent(data.selectedOpponent)
 //
-// }
+
 
 
 
