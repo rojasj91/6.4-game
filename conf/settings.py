@@ -43,7 +43,7 @@ SECRET_KEY = 'k-+#u0nt2=_$5e5y!51!d)eicn!#eg5d6(dlan8m6p#*3)x)td'
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'jeff.turnbase.com'
+    'jeff.turnbasegame.com'
 ]
 
 
